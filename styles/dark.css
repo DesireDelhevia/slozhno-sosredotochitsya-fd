@@ -1,10 +1,27 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  --banner-background: url('../images/cover-image-dark.png');
-  --background-color: #000028;
+    --banner-background: url('../images/cover-image-dark.png');
+    --background-color: #000028;
+    --primary-color: #ff0070;
+    --primary-text-color: #000028;
+    --headline-color: var(--primary-color, #ff0070);
+    --secondary-text-color: #f1b2ce;
+    --logo-color: #db00ff;
+    --button-menu-color: var(--primary-color);
+    --record: flex;
+    --rec-corner-color: var(--primary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --banner-background: url('../images/cover-image-dark.png');
+        --background-color: #000028;
+        --primary-color: #ff0070;
+        --primary-text-color: #000028;
+        --headline-color: var(--primary-color, #ff0070);
+        --secondary-text-color: #f1b2ce;
+        --logo-color: #db00ff;
+        --button-menu-color: var(--primary-color);
+        --record: flex;
+        --rec-corner-color: var(--primary-color);
+    }
 }

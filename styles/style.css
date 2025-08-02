@@ -1,10 +1,323 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  background-image: var(--banner-background);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: var(--background-color);
+    background-image: var(--banner-background);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--background-color);
 }
+
+.header,
+.footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100dvh;
+    padding: var(--page-padding);
+    min-height: 66.8rem;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+}
+
+.decorated-zone::before {
+    right: var(--page-padding);
+    top: var(--page-padding);
+    border-top: 0.1rem solid var(--rec-corner-color);
+    border-right: 0.1rem solid var(--rec-corner-color);
+}
+
+.decorated-zone::after {
+    left: var(--page-padding);
+    bottom: var(--page-padding);
+    border-bottom: 0.1rem solid var(--rec-corner-color);
+    border-left: 0.1rem solid var(--rec-corner-color);
+}
+
+.header__content {
+    font-size: 1.8rem;
+    display: grid;
+    align-items: start;
+    justify-content: end;
+    grid-template-rows: 0.445fr 1fr;
+    height: 45vh;
+}
+
+.header__theme-menu {
+    display: flex;
+    grid-row: 2;
+}
+
+.header__theme-menu-list {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.header__theme-menu-button_active .button-menu {
+    border-color: currentColor;
+}
+
+.button-menu:focus {
+    outline: none;
+}
+
+.button-menu:focus-visible {
+    border-block-end: 1px solid currentColor;
+    outline-width: 0;
+}
+
+.header__theme-menu-button_type_light {
+}
+
+.header__theme-menu-button_type_auto {
+}
+.header__theme-menu-button_type_dark {
+}
+
+.header__record-decoration {
+    display: var(--record);
+    align-items: center;
+    justify-self: end;
+    grid-row: 1;
+    margin-right: 1rem;
+    gap: 1rem;
+    color: var(--primary-color);
+}
+
+.header__record-decoration::after {
+    content: '';
+    display: block;
+    inline-size: 0.9rem;
+    block-size: 0.9rem;
+    border-radius: 50%;
+    background-color: currentColor;
+    box-shadow: 0 0 0.4rem 0.2rem currentColor;
+}
+
+.banner {
+    padding-block-start: 2.5rem;
+    display: grid;
+    height: 100%;
+    grid-template-rows: min-content 1fr;
+}
+
+.logo {
+    color: var(--logo-color, #fff);
+    font-weight: 700;
+    line-height: 0.83;
+    font-size: clamp(11.5rem, 15vw, 15.75rem);
+    text-shadow: 0.4rem 0.4rem var(--primary-color);
+}
+
+.banner__text {
+    align-self: center;
+    justify-self: end;
+}
+
+.title {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+.title.title_normal {
+    font-weight: normal;
+}
+
+.headline {
+    color: var(--headline-color);
+    word-wrap: break-word;
+}
+
+.main {
+    padding-inline: var(--side-fields);
+    margin-block: var(--main-gap);
+}
+
+.button-menu {
+    appearance: none;
+    color: var(--button-menu-color);
+    background-color: transparent;
+    border: 0.063rem solid transparent;
+    cursor: pointer;
+    text-transform: lowercase;
+    padding-inline: 1.3rem;
+    padding-block: 0.18rem 0.43rem;
+    font-size: 1.8rem;
+    line-height: 1;
+    inline-size: 7rem;
+}
+
+.button-menu:focus {
+    outline: none;
+}
+
+.button-menu.header__theme-menu-button_active {
+    border-color: inherit;
+}
+
+.focus {
+    display: grid;
+    gap: 2rem;
+}
+
+.headline {
+    color: var(--headline-color);
+    word-wrap: break-word;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.card-list .text {
+    margin-top: 1rem;
+}
+
+.title,
+.text,
+.headline {
+    font-size: 1.75rem;
+    line-height: 130%;
+    font-family: inherit;
+}
+
+.attention .headline {
+    inline-size: var(--width-headline, 100%);
+}
+
+.attention__card-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-top: 2rem;
+}
+
+.hard,
+.attention__card-list,
+.concentration {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.hard,
+.concentration {
+    grid-auto-flow: dense;
+    grid-template-columns: 100%;
+}
+
+.concentration__item-title {
+    font-weight: 400;
+}
+
+.attention,
+.gallery,
+.concentration {
+    margin-top: calc(var(--gap-between-block));
+}
+
+.gallery__content {
+    padding-top: 1rem;
+}
+
+.footer {
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+.footer__logo {
+    filter: drop-shadow(2px 2px var(--primary-color));
+}
+
+@media screen and (min-width: 23.5rem) {
+  .header__content {
+    height: 72vh;
+    grid-template-rows: 0.67fr 1fr;
+  }
+
+  .banner {
+    transform: translateX(calc(-1 * var(--side-fields)));
+  }
+
+  .hard,
+  .concentration {
+    grid-template-columns: var(--width-headline) 1fr;
+  }
+
+  .banner__text {
+    width: min(100%, 22.188rem);
+    max-width: 49%;
+  }
+
+  .gallery__content {
+    --gallery-columns: repeat(3, 1fr);
+    --gallery-gap: 2rem;
+    padding-block-start: 2rem;
+  }
+
+  .gallery__image_medium-column {
+    grid-column: span 2;
+  }
+
+  .gallery__image_medium-row {
+    grid-row: span 2;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .header__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: unset;
+    align-items: unset;
+    height: auto;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+    grid-row: auto;
+    justify-self: center;
+  }
+
+  .header__record-decoration {
+    grid-column: 3;
+  }
+
+  .banner {
+    grid-template-rows: 1.29fr 1fr;
+  }
+
+  .banner__logo {
+    align-self: flex-end;
+  }
+
+  .attention__card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (any-hover: hover) {
+  .button-menu:hover {
+    border-color: color-mix(in srgb, var(--button-menu-color) 40%, transparent);
+  }
+
+  .text > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.125rem;
+  }
+}
+

@@ -1,11 +1,26 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  --banner-background: url('../images/cover-image-light.png');
-  --background-color: #FFF1F7;
+    --banner-background: url('../images/cover-image-light.png');
+    --background-color: #fff1f7;
+    --primary-color: #ff8dcb;
+    --primary-text-color: #353430;
+    --headline-color: #353430;
+    --logo-color: #ffc2e6;
+    --secondary-text-color: #353430;
+    --button-menu-color: #353430;
+    --record: none;
+    --rec-corner-color: #353430;
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --banner-background: url('../images/cover-image-light.png');
+        --background-color: #fff1f7;
+        --primary-color: #ff8dcb;
+        --primary-text-color: #353430;
+        --headline-color: #353430;
+        --logo-color: #ffc2e6;
+        --button-menu-color: #353430;
+        --record: none;
+        --rec-corner-color: #353430;
+    }
+}
