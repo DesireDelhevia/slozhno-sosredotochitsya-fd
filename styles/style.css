@@ -243,6 +243,9 @@
 
 .gallery__content {
     padding-top: 1rem;
+    display: grid;
+    grid-template-columns: var(--gallery-columns);
+    gap: var(--gallery-gap);
 }
 
 .footer {
@@ -284,6 +287,12 @@
         margin-block-start: 2rem;
     }
 
+    .gallery__image {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
     .gallery__image_medium-column {
         grid-column: span 2;
     }
