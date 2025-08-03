@@ -46,7 +46,7 @@
     align-items: start;
     justify-content: end;
     grid-template-rows: 0.445fr 1fr;
-    height: 45vh;
+    height: auto;
 }
 
 .header__theme-menu {
@@ -271,7 +271,7 @@
 
 @media screen and (min-width: 23.5rem) {
     .header__content {
-        height: 72vh;
+        height: auto;
         grid-template-rows: 0.68fr 1fr;
     }
 
@@ -351,7 +351,7 @@
 
     .text > a:hover {
         content: '';
-        text-decoration: underline;
+        border-bottom: underline;
         text-underline-offset: 0.125rem;
     }
 }
