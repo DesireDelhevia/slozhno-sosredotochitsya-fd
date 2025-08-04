@@ -350,8 +350,7 @@
     }
 
     .text > a:hover {
-        content: '';
-        border-bottom: underline;
+        border-bottom: 1px solid currentColor;
         text-underline-offset: 0.125rem;
     }
 }
