@@ -1,7 +1,3 @@
-* {
-    outline: 1px solid red;
-}
-
 .page {
     background-image: var(--banner-background);
     background-repeat: no-repeat;
@@ -51,7 +47,7 @@
     align-items: start;
     justify-content: end;
     grid-template-rows: 0.445fr 1fr;
-    height: auto;
+    min-height: 30vh;
 }
 
 .header__theme-menu {
@@ -103,7 +99,6 @@
     display: grid;
     height: 100%;
     grid-template-rows: min-content 1fr;
-    padding-bottom: 3rem;
 }
 
 .logo {
@@ -112,7 +107,6 @@
     line-height: 0.83;
     font-size: clamp(11.5rem, 15vw, 15.75rem);
     text-shadow: 0.4rem 0.4rem var(--primary-color);
-    padding-left: 10px;
 }
 
 .title,
@@ -278,9 +272,8 @@
 
 @media screen and (width > 23.5rem) {
     .header__content {
-        height: auto;
+        min-height: 41vh;
         grid-template-rows: 0.67fr 1fr;
-        gap: 13rem;
     }
 
     .banner {
@@ -322,7 +315,7 @@
 @media screen and (width > 48rem) {
     .header__content {
         grid-template-columns: repeat(3, 1fr);
-        height: initial;
+        min-height: initial;
         grid-template-rows: initial;
         align-items: initial;
     }
@@ -343,6 +336,7 @@
 
     .banner {
         grid-template-rows: 1.4fr 1fr;
+        padding-bottom: 3rem;
     }
 
     .banner__text {
@@ -352,6 +346,7 @@
 
     .banner__logo {
         align-self: end;
+        padding-left: 10px;
     }
 
     .attention__card-list {
