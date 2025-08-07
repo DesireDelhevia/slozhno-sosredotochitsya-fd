@@ -1,3 +1,7 @@
+* {
+    outline: 1px solid red;
+}
+
 .page {
     background-image: var(--banner-background);
     background-repeat: no-repeat;
@@ -5,6 +9,7 @@
     background-position: center;
     background-size: cover;
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 .header,
@@ -98,6 +103,7 @@
     display: grid;
     height: 100%;
     grid-template-rows: min-content 1fr;
+    padding-bottom: 3rem;
 }
 
 .logo {
@@ -106,6 +112,7 @@
     line-height: 0.83;
     font-size: clamp(11.5rem, 15vw, 15.75rem);
     text-shadow: 0.4rem 0.4rem var(--primary-color);
+    padding-left: 10px;
 }
 
 .title,
@@ -154,7 +161,7 @@
 }
 
 .main {
-    padding-inline: var(--side-fields);
+    padding-inline: var(--page-padding);
     margin-block: var(--main-gap);
 }
 
@@ -207,7 +214,7 @@
 .title,
 .text,
 .headline {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     line-height: 130%;
     font-family: inherit;
 }
@@ -242,7 +249,7 @@
 .attention,
 .gallery,
 .concentration {
-    margin-top: calc(var(--gap-between-block));
+    margin-block-start: var(--gap-between-block);
 }
 
 .gallery__content {
@@ -269,19 +276,24 @@
     filter: drop-shadow(2px 2px var(--primary-color));
 }
 
-@media screen and (min-width: 23.5rem) {
+@media screen and (width > 23.5rem) {
     .header__content {
         height: auto;
-        grid-template-rows: 0.68fr 1fr;
+        grid-template-rows: 0.67fr 1fr;
+        gap: 13rem;
     }
 
     .banner {
-        margin-inline-start: calc(-1 * var(--side-fields));
+        margin-inline-start: calc(-1 * var(--page-padding));
     }
 
     .focus,
     .concentration {
         grid-template-columns: var(--width-headline) 1fr;
+    }
+
+    .concentration__content {
+        margin-inline-start: 20px;
     }
 
     .banner__text {
@@ -295,7 +307,7 @@
     }
 
     .gallery__content {
-        margin-block-start: 2rem;
+        margin-block-start: 1rem;
     }
 
     .gallery__image_medium-column {
@@ -309,7 +321,6 @@
 
 @media screen and (width > 48rem) {
     .header__content {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
         height: initial;
         grid-template-rows: initial;
@@ -331,7 +342,12 @@
     }
 
     .banner {
-        grid-template-rows: 1.29fr 1fr;
+        grid-template-rows: 1.4fr 1fr;
+    }
+
+    .banner__text {
+        max-width: 491px;
+        margin-block-end: -3rem;
     }
 
     .banner__logo {
