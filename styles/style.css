@@ -5,7 +5,12 @@
     background-position: center;
     background-size: cover;
     background-color: var(--background-color);
-    overflow-x: hidden;
+}
+
+.page,
+.header,
+.main {
+    margin-top: 0;
 }
 
 .header,
@@ -47,7 +52,6 @@
     align-items: start;
     justify-content: end;
     grid-template-rows: 0.445fr 1fr;
-    min-height: 30vh;
 }
 
 .header__theme-menu {
@@ -272,7 +276,6 @@
 
 @media screen and (width > 23.5rem) {
     .header__content {
-        min-height: 41vh;
         grid-template-rows: 0.67fr 1fr;
     }
 
@@ -312,6 +315,20 @@
     }
 }
 
+@media screen and (max-width: 375px) {
+    .header {
+        width: 100%;
+    }
+
+    .header__theme-menu-list {
+        margin-block-start: 3.7rem;
+    }
+
+    .banner {
+        padding-block-start: 3.4rem;
+    }
+}
+
 @media screen and (width > 48rem) {
     .header__content {
         grid-template-columns: repeat(3, 1fr);
@@ -341,7 +358,7 @@
 
     .banner__text {
         max-width: 491px;
-        margin-block-end: -3rem;
+        margin-block-start: 3rem;
     }
 
     .banner__logo {
@@ -352,6 +369,23 @@
     .attention__card-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 23.5rem) and (max-width: 1023px) {
+    .header__theme-menu-list {
+        margin-block-start: 8.8rem;
+    }
+
+    .logo {
+        font-size: 120px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 82.5%;
+    }
+
+    .banner {
+    padding-block-start: 13.5rem;
     }
 }
 
